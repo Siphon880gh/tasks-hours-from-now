@@ -48,6 +48,23 @@ let utilities = {
     },
 }
 
+let persister = {
+    getAny: function(app) {
+        let {$userInputs} = app;
+        let persistedTasks = localStorage.getItem("hoursFromNow.tasks", $userInputs.val());
+        if(persistedTasks) {
+            $userInputs.val(persistedTasks);
+            setTimeout(()=>{
+                $userInputs.trigger("input");
+            }, 500)
+        }
+    },
+    set: function(app) {
+        let {$userInputs} = app;
+        localStorage.setItem("hoursFromNow.tasks", $userInputs.val())
+    }
+}
+
 let app = {
     $begin:"",
     $userInputs:"",
@@ -70,6 +87,8 @@ Last task 3
         Object.assign(app, $doms);
         this.currentTime = "" + (new Date).getHours() + (new Date).getMinutes();
 
+        persister.getAny(app);
+
         // User sets begin time
         this.$begin.on("input", ev=>{
             const {target:el} = ev;
@@ -89,6 +108,9 @@ Last task 3
         this.$userInputs.on("input", ev=>{
             const {target:el} = ev;
             const $el = $(el);
+
+
+            persister.set(app);
 
             app.tasks = []; // reset tasks
             let lines = $el.val().split("\n");
