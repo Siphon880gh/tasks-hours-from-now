@@ -7,3 +7,20 @@
 #user-inputs::placeholder {
     content: "Test";
 }
+
+#time-suggesetions .suggestion {
+    border: 1px solid black;
+}
+
+#time-suggestions .suggestion:nth-child(odd) {
+    background-color: lightgreen;
+}
+
+.suggestion-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.suggestion-header::before {
+    content: "Suggestions";
+}

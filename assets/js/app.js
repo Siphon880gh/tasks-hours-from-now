@@ -103,7 +103,7 @@ let app = {
             } // check all lines
 
             const $suggestions = this.$timeSuggestions;
-            $suggestions.html(""); // Reset suggestions
+            $suggestions.html(`<div class="suggestion-header"></div>`); // Reset suggestions
             app.tasks = app.tasks.sort((taskA, taskB)=>{
                 let fractionA = utilities.cvtMilitaryTimeToFractional(taskA.militaryTime);
                 let fractionB = utilities.cvtMilitaryTimeToFractional(taskB.militaryTime);
