@@ -1,0 +1,9 @@
+#user-inputs {
+    width: 100%;
+    height: 225px;
+    resize: vertical;
+}
+
+#user-inputs::placeholder {
+    content: "Test";
+}
