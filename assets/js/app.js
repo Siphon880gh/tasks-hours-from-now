@@ -55,6 +55,17 @@ let app = {
     currentTime:"",
     tasks: [],
 
+    help: function() {
+        alert("Takes your todo list with the numbers of hours from now when they should be done by, then sorts them in order by military time. Here's an example.");
+        let example = `Some task 0
+Some task 1
+Some tasker 0.5
+Some last task 3
+`;
+        this.$userInputs.val(example);
+        this.$userInputs.trigger("input");
+    },
+
     init: function($doms) {
         Object.assign(app, $doms);
         this.currentTime = "" + (new Date).getHours() + (new Date).getMinutes();
