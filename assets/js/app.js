@@ -56,7 +56,7 @@ let app = {
     tasks: [],
 
     help: function() {
-        alert("Takes your todo list with the numbers of hours from now when they should be done by, then sorts them in order by military time. Here's an example.");
+        alert("Takes your todo list with the numbers of hours from now when they should be done by, then sorts them in order by military time. Cross out the sorted todo list as you finish your tasks. Here's an example.");
         let example = `Some task 0
 Some task 1
 Some tasker 0.5
