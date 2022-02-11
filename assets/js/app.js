@@ -125,7 +125,7 @@ Some last task 3
             for(let i = 0; i<app.tasks.length; i++) {
                 let task = app.tasks[i];
                 $suggestions.append(`
-                    <div class="suggestion">
+                    <div class="suggestion" onclick="event.stopPropagation(); $(event.target).closest('.suggestion').toggleClass('crossed-out');">
                         <span class="suggestion-time">${task.militaryTime}</span>
                         <span class="suggestion-task">${task.task}</span>
                     </div>

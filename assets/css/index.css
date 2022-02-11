@@ -18,7 +18,7 @@
     padding-right: 5px;
 }
 
-#time-suggestions .suggestion:nth-child(odd) {
+#time-suggestions .suggestion:nth-child(even) {
     background-color: lightgreen;
 }
 
@@ -29,6 +29,10 @@
 
 .suggestion-header::before {
     content: "Suggestions";
+}
+
+.crossed-out {
+    text-decoration: line-through;
 }
 
 .bottom-right {
