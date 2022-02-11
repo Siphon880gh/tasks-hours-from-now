@@ -102,7 +102,7 @@ let app = {
                 } // vald line
             } // check all lines
 
-            const $suggestions = this.$timeSuggestions.find("ul");
+            const $suggestions = this.$timeSuggestions;
             $suggestions.html(""); // Reset suggestions
             app.tasks = app.tasks.sort((taskA, taskB)=>{
                 let fractionA = utilities.cvtMilitaryTimeToFractional(taskA.militaryTime);
@@ -114,10 +114,10 @@ let app = {
             for(let i = 0; i<app.tasks.length; i++) {
                 let task = app.tasks[i];
                 $suggestions.append(`
-                    <li class="suggestion">
+                    <div class="suggestion">
                         <span class="suggestion-time">${task.militaryTime}</span>
                         <span class="suggestion-task">${task.task}</span>
-                    </li>
+                    </div>
                 `);
             }
         }) // on user inputting tasks
