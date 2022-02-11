@@ -22,5 +22,16 @@ let app = {
 
     init: function($doms) {
         Object.assign(app, $doms);
+        this.$begin.on("input", ev=>{
+            const {target:el} = ev;
+            const $el = $(el);
+
+            $el.removeClass("is-valid").removeClass("is-invalid");
+            if($el.val.length==4 && utilities.checkAllNumbers(val)) {
+                $el.addClass("is-valid");
+            } else {
+                $el.addClass("is-invalid");
+            }
+        });
     }
 }
