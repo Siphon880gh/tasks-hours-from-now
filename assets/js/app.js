@@ -38,9 +38,13 @@ let app = {
     $begin:"",
     $userInputs:"",
     $timeSuggestions:"",
+    currentTime:"",
 
     init: function($doms) {
         Object.assign(app, $doms);
+        this.currentTime = "" + (new Date).getHours() + (new Date).getMinutes();
+
+        // User sets
         this.$begin.on("input", ev=>{
             const {target:el} = ev;
             const $el = $(el);
@@ -48,8 +52,10 @@ let app = {
             $el.removeClass("is-valid").removeClass("is-invalid");
             if($el.val.length==4 && utilities.checkAllNumbers(val)) {
                 $el.addClass("is-valid");
+                this.currentTime = $el.val;
             } else {
                 $el.addClass("is-invalid");
+                this.currentTime = "" + (new Date).getHours() + (new Date).getMinutes();
             }
         });
     }
