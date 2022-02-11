@@ -12,7 +12,26 @@ let utilities = {
             }
         } // for
         return isNum;
-    }
+    }, 
+    cvtMilitaryTimeToFractional: (militaryTime) => {
+        let h = parseInt(militaryTime.substr(0,2));
+        let m = parseInt(militaryTime.substr(2,2));
+        let fractional = h+(m/60)
+        // Round to two decimal places
+        fractional = Math.round((fractional + Number.EPSILON) * 100) / 100;
+        return fractional;
+    },
+    cvtFractionalToMilitaryTime: (fractionalTime) => {
+        let h = Math.floor(fractionalTime);
+        let hh = (""+h).padStart(2,"0");
+
+        let moduled = fractionalTime%1;
+        let m = Math.round(moduled*60);
+        let mm = (""+m).padStart(2,"0");
+
+        let timemark = hh+mm;
+        return timemark;
+    },
 }
 
 let app = {
