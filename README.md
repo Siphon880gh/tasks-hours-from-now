@@ -21,7 +21,7 @@ By Weng Fei Fung. Takes your todo list with the numbers of hours from now when t
 
 :camera: Preview:
 ---
-![image](docs/screenshot.png)
+![image](docs/screenshot-newer.png)
 
 ## :minidisc: Installation and Usage:
 Run as a HTML file. No needed hands-on setup.

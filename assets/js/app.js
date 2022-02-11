@@ -57,10 +57,10 @@ let app = {
 
     help: function() {
         alert("Takes your todo list with the numbers of hours from now when they should be done by, then sorts them in order by military time. Cross out the sorted todo list as you finish your tasks. Here's an example.");
-        let example = `Some task 0
-Some task 1
-Some tasker 0.5
-Some last task 3
+        let example = `First task 0
+Third task 1
+Second task 0.5
+Last task 3
 `;
         this.$userInputs.val(example);
         this.$userInputs.trigger("input");
